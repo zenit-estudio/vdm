@@ -1,0 +1,442 @@
+/* ==========================================================
+   RESET Y CONFIGURACIÓN BÁSICA
+   ========================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #666666; /* Fondo gris intermedio para PC */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ==========================================================
+   CONTENEDOR PRINCIPAL (440px centrado / 100% en Móvil)
+   ========================================================== */
+.main-container {
+    width: 100%;
+    max-width: 440px; /* Ancho fijo solicitado */
+    background-color: #3f0913; /* Fondo base en tono vino según diseño */
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Ajustes generales de imágenes SVG */
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.svg-block {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================
+   ESTILOS DE CARRUSELES (Bombonería y Alfajores)
+   ========================================================== */
+.section-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    flex-shrink: 0;
+    display: none; /* Se gestiona con la clase .active */
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+/* Botones de navegación (Flechas Izq / Der) */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.carousel-btn:hover {
+    color: #ffffff;
+}
+
+.prev-btn {
+    left: 5px;
+}
+
+.next-btn {
+    right: 5px;
+}
+
+/* Indicadores de puntos (Dots) */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    background-color: transparent;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ff3366; /* Color destacado según tono del diseño */
+}
+
+/* ==========================================================
+   BLOCK DE NOTAS (Pestañas y Hojas SVG)
+   ========================================================== */
+.notepad-section {
+    width: 100%;
+    position: relative;
+}
+
+.notepad-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tab-btn {
+    width: 20%;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    opacity: 1;
+}
+
+.notepad-sheets {
+    width: 100%;
+}
+
+.sheet-img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.sheet-img.active {
+    display: block;
+}
+
+/* ==========================================================
+   SECCIÓN DE BOTONES INTERACTIVOS (CTA)
+   ========================================================== */
+.cta-section {
+    width: 100%;
+}
+
+.btn-container {
+    width: 100%;
+    cursor: pointer;
+}
+
+.clickable-btn {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.clickable-btn:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================
+   MODALES / POPUPS
+   ========================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================
+   POPUP COSTOS PROMOCIONALES (Largo con Scroll)
+   ========================================================== */
+.modal-content.scroll-modal {
+    position: relative;
+    max-width: 440px;
+    width: 95%;
+    max-height: 85vh; /* Altura máxima respecto a la pantalla */
+    background-color: #3f0913; /* Fondo consistente con la marca */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Área interna con Scroll Vertical */
+.modal-scroll-area {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+}
+
+/* Barra de scroll fina y azul (Chrome, Safari, Edge, Opera) */
+.modal-scroll-area::-webkit-scrollbar {
+    width: 4px; /* Barrita fina */
+}
+
+.modal-scroll-area::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-scroll-area::-webkit-scrollbar-thumb {
+    background-color: #0088ff; /* Color azul para indicar posición */
+    border-radius: 4px;
+}
+
+/* Barra de scroll para Firefox */
+.modal-scroll-area {
+    scrollbar-width: thin;
+    scrollbar-color: #0088ff rgba(255, 255, 255, 0.1);
+}
+
+.popup-long-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botón Cruz Superior (40x40px al borde) */
+.modal-close-x.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Pie inferior con Botón Volver */
+.modal-footer {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.btn-modal-close-bottom {
+    background-color: #ffffff;
+    color: #3f0913;
+    border: none;
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-modal-close-bottom:hover {
+    background-color: #e0e0e0;
+}
+
+/* Popup de Imagen SVG (Propuestas) */
+.modal-content.svg-modal {
+    position: relative;
+    max-width: 420px;
+    width: 90%;
+    background: transparent;
+}
+
+.popup-svg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.modal-close-x {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    z-index: 1010;
+}
+
+/* ==========================================================
+   SECCIÓN 14: FOOTER Y ENLACE CENTRADO
+   ========================================================== */
+.section-footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link {
+    position: absolute;
+    /* Ajustamos la posición vertical hacia más abajo */
+    top: 78%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Tamaño de texto más grande */
+    font-size: 1.15rem; 
+    font-weight: 600;
+    
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    opacity: 0.95;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ==========================================================
+   SECCIÓN 13: CONTACTO OVERLAY
+   ========================================================== */
+.section-contact {
+    position: relative;
+    width: 100%;
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 60%; /* Ajusta la altura sobre el bloque page_13.svg */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Fila con icono + número */
+.whatsapp-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.wsp-icon {
+    width: 45px;
+    height: 45px;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.wsp-link:hover .wsp-icon {
+    transform: scale(1.08);
+}
+
+.phone-number {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    user-select: all; /* Facilita seleccionar todo el número al hacer un clic */
+}
+
+/* Enlace a Email */
+.email-link {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
+}
+
+.email-link:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+}

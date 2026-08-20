@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestra de Diseño - Zenit Estudio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="main-container">
+
+        <!-- SECCIÓN 01: Encabezado / Título principal -->
+        <section class="section section-01">
+            <img src="assets/page_01.svg" alt="Diseño de Imagen - Presentación" class="svg-block">
+        </section>
+
+        <!-- SECCIÓN 02 & CARRUSEL BOMBONERÍA -->
+        <section class="section section-carousel" id="carousel-bomboneria">
+            <img src="assets/page_02.svg" alt="Bombonería Packaging" class="svg-block">
+            
+            <!-- Visor del Carrusel 1 (Imágenes de 440x400px) -->
+            <div class="carousel-viewport">
+                <button class="carousel-btn prev-btn" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-track">
+                    <img src="assets/imagen_01.png" alt="Muestra Bombonería 1" class="carousel-slide active">
+                    <img src="assets/imagen_02.png" alt="Muestra Bombonería 2" class="carousel-slide">
+                    <img src="assets/imagen_03.png" alt="Muestra Bombonería 3" class="carousel-slide">
+                    <img src="assets/imagen_04.png" alt="Muestra Bombonería 4" class="carousel-slide">
+                    <img src="assets/imagen_05.png" alt="Muestra Bombonería 5" class="carousel-slide">
+                    <img src="assets/imagen_06.png" alt="Muestra Bombonería 6" class="carousel-slide">
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Siguiente">&#10095;</button>
+            </div>
+            
+            <!-- Indicadores (Dots) -->
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 03: Separador / Título Alfajores -->
+        <section class="section section-03">
+            <img src="assets/page_03.svg" alt="Alfajores Packaging" class="svg-block">
+        </section>
+
+        <!-- SECCIÓN 04 & CARRUSEL ALFAJORES -->
+        <section class="section section-carousel" id="carousel-alfajores">
+            
+
+            <!-- Visor del Carrusel 2 (Imágenes de 440px) -->
+            <div class="carousel-viewport">
+                <button class="carousel-btn prev-btn" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-track">
+                    <img src="assets/imagen_cuad01.png" alt="Muestra Alfajor 1" class="carousel-slide active">
+                    <img src="assets/imagen_cuad02.png" alt="Muestra Alfajor 2" class="carousel-slide">
+                    <img src="assets/imagen_cuad03.png" alt="Muestra Alfajor 3" class="carousel-slide">
+                    <img src="assets/imagen_cuad04.png" alt="Muestra Alfajor 4" class="carousel-slide">
+                    <img src="assets/imagen_cuad05.png" alt="Muestra Alfajor 5" class="carousel-slide">
+                    <img src="assets/imagen_cuad06.png" alt="Muestra Alfajor 6" class="carousel-slide">
+                    <img src="assets/imagen_cuad07.png" alt="Muestra Alfajor 7" class="carousel-slide">
+                    <img src="assets/imagen_cuad08.png" alt="Muestra Alfajor 8" class="carousel-slide">
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Siguiente">&#10095;</button>
+            </div>
+
+            <!-- Indicadores (Dots) -->
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 05: Título Concept Cards -->
+        <section class="section section-05">
+            <img src="assets/page_05.svg" alt="Concepts Cards" class="svg-block">
+        </section>
+
+        <!-- SECCIÓN BLOCK DE NOTAS (Barra Unificada + Hoja) -->
+<section class="section notepad-section">
+    <!-- Imagen dinámica de la barra de botones -->
+    <img id="notepad-bar" src="assets/page_06.svg" alt="Pestañas Block de Notas" class="svg-block" usemap="#tabs-map">
+
+    <!-- Mapa interactivo de clics basado en tus 83.5px por botón -->
+    <map name="tabs-map">
+        <!-- Pestaña A: Diseño (11px a 94.5px) -->
+        <area shape="rect" coords="11,0,95,100" href="#" id="tab-A" alt="Diseño">
+        <!-- Pestaña B: Forma (94.5px a 178px) -->
+        <area shape="rect" coords="95,0,178,100" href="#" id="tab-B" alt="Forma">
+        <!-- Pestaña C: Mensaje (178px a 261.5px) -->
+        <area shape="rect" coords="178,0,262,100" href="#" id="tab-C" alt="Mensaje">
+        <!-- Pestaña D: Idea (261.5px a 345px) -->
+        <area shape="rect" coords="262,0,345,100" href="#" id="tab-D" alt="Idea">
+        <!-- Pestaña E: Plan (345px a 428.5px) -->
+        <area shape="rect" coords="345,0,429,100" href="#" id="tab-E" alt="Plan">
+    </map>
+
+    <!-- Imagen dinámica de la hoja del block de notas -->
+    <div class="notepad-sheet-container">
+        <img id="notepad-sheet" src="assets/page_07.svg" alt="Contenido Block de Notas" class="svg-block">
+    </div>
+</section>
+
+        <!-- SECCIÓN 08: Diseñando / Transición -->
+        <section class="section section-08">
+            <img src="assets/page_08.svg" alt="Diseñando" class="svg-block">
+        </section>
+
+        <!-- SECCIÓN BOTONES DE ACCIÓN -->
+        <section class="section cta-section">
+            <!-- Botón 1: Abrir Modal PDF -->
+            <div class="btn-container" id="btn-download-trigger">
+                <img src="assets/page_09_btn_descargar.svg" alt="Descargar Costos PDF Promocional" class="clickable-btn">
+            </div>
+
+            <img src="assets/page_10_btn_espacio.svg" alt="Espaciador" class="svg-block">
+
+            <!-- Botón 2: Abrir Popup Propuestas -->
+            <div class="btn-container" id="btn-proposal-trigger">
+                <img src="assets/page_11_popup_propuesta.svg" alt="Propuesta Emprendedores" class="clickable-btn">
+            </div>
+        </section>
+
+        <!-- SECCIONES FINALES DE CONTACTO Y CIERRE -->
+        <section class="section section-12">
+            <img src="assets/page_12.svg" alt="Contacto Zenit Estudio" class="svg-block">
+        </section>
+
+        <!-- SECCIÓN 13: CONTACTO -->
+<section class="section section-contact">
+    <img src="assets/page_13.svg" alt="Contacto Zenit" class="svg-block">
+    
+    <div class="contact-overlay">
+        <!-- Fila de WhatsApp -->
+        <div class="whatsapp-row">
+            <a href="https://wa.me/5493425843774" target="_blank" rel="noopener noreferrer" class="wsp-link">
+                <img src="assets/icono_wsp.svg" alt="WhatsApp" class="wsp-icon">
+            </a>
+            <span class="phone-number">+54 9 342 584 3774</span>
+        </div>
+
+        <!-- Enlace de Correo (Apertura segura en nueva pestaña) -->
+<a href="mailto:zenitestudio.dg@gmail.com" onclick="window.open(this.href, '_blank'); return false;" class="email-link">
+    zenitestudio.dg@gmail.com
+</a>
+    </div>
+</section>
+
+<!-- SECCIÓN 14: FOOTER CON ENLACE -->
+<section class="section section-footer">
+    <img src="assets/page_14.svg" alt="Footer Zenit" class="svg-block">
+    <a href="https://zenit-estudio.github.io/vcm/" target="_blank" rel="noopener noreferrer" class="footer-link">
+        zenit-estudio.github.io/vcm/
+    </a>
+</section>
+
+    </main>
+
+    <!-- POPUP 1: MOSTRAR COSTOS PROMOCIONALES CON SCROLL -->
+<div class="modal-overlay" id="modal-download">
+    <div class="modal-content scroll-modal">
+        <!-- Cruz de cerrar superior (40x40px) -->
+        <button class="modal-close-x top-right" id="btn-close-download" aria-label="Cerrar">&times;</button>
+        
+        <!-- Contenedor scrolleable -->
+        <div class="modal-scroll-area">
+            <img src="assets/zenit_promociones.svg" alt="Costos Promocionales" class="popup-long-img">
+        </div>
+    </div>
+</div>
+
+    <!-- POPUP 2: PROPUESTA EMPRENDEDORES CON SCROLL -->
+<div class="modal-overlay" id="modal-proposal">
+    <div class="modal-content scroll-modal">
+        <!-- Cruz de cerrar superior (40x40px) -->
+        <button class="modal-close-x top-right" id="btn-close-proposal" aria-label="Cerrar">&times;</button>
+        
+        <!-- Contenedor scrolleable -->
+        <div class="modal-scroll-area">
+            <img src="assets/page_popup_09.svg" alt="Propuesta Zenit" class="popup-long-img">
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
